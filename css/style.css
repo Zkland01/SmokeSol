@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 body {
   font-family: "Roboto", sans-serif;
   color: #0c0c0c;
@@ -9,6 +9,7 @@ body {
   -moz-animation: AnimationName 18s ease infinite;
   animation: AnimationName 18s ease infinite;
 }
+
 
 @-webkit-keyframes AnimationName {
   0%{background-position:87% 0%}
@@ -65,8 +66,10 @@ body {
   background-color: #633f85;
   height: 85vh;
   background-image: url(https://i.gifer.com/VdJo.gif);
-
+  background-size: cover;
+  background-repeat: no-repeat;
 }
+
 
 .sub_page .hero_area {
   height: auto;
@@ -198,24 +201,32 @@ a:focus {
 /*end header section*/
 /* slider section */
 .slider_section {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  transform: translateY(50px);
+  height: 95%;
+  display: flex;
+  align-items: center;
+  border: 3px solid #381e6e;
+  border-radius: 10px;
+}
+
+.slider_section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-image: url(../images/glassed.png);
   background-repeat: no-repeat;
   background-size: cover;
-  width: 90%;
-  margin: 0 auto;
-  -webkit-transform: translateY(50px);
-          transform: translateY(50px);
-  height: 95%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-          border: 3px solid #381e6e;
-          border-radius: 10px;        
-
+  opacity: 0.9; /* Adjust the opacity level */
+  z-index: -1;
 }
+
+/* Rest of your styles for .slider_section */
 
 .slider_section .detail-box {
   color: #fefdfc;
@@ -640,6 +651,12 @@ a:focus {
   animation: typewriter 3s steps(40); /* Adjust the duration and steps as needed */
 }
 
+@media (max-width: 767px) {
+  .type {
+    font-size: 24px; /* Adjust the font size for smaller screens */
+  }
+}
+
 .carousel-item {
   transition: transform 5 ease-in-out;
 }
@@ -935,3 +952,4 @@ ul {
 .n li:nth-child(5) a:hover .fab {
   color: #e4405f;
 }
+
